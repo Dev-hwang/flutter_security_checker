@@ -14,7 +14,7 @@ To use this plugin, add `flutter_security_checker` as a [dependency in your pubs
 
 ```yaml
 dependencies:
-  flutter_security_checker: ^1.0.0
+  flutter_security_checker: ^1.0.1
 ```
 
 ## How to use

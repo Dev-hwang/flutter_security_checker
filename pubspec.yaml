@@ -1,6 +1,6 @@
 name: flutter_security_checker
 description: This plugin provides the ability to verify rooting and integrity on Android and iOS platforms.
-version: 1.0.0
+version: 1.0.1
 author: WOO JIN HWANG <hwj930513@naver.com>
 homepage: https://github.com/Dev-hwang/flutter_security_checker
 
