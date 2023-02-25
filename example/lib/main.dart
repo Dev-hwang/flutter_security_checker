@@ -11,9 +11,9 @@ class ExampleApp extends StatefulWidget {
 class _ExampleAppState extends State<ExampleApp> {
   bool _isChecking = false;
 
-  bool _isRooted;
-  bool _isRealDevice;
-  bool _hasCorrectlyInstalled;
+  bool? _isRooted;
+  bool? _isRealDevice;
+  bool? _hasCorrectlyInstalled;
 
   void _onCheckButtonPressed() async {
     setState(() => _isChecking = true);
@@ -31,9 +31,9 @@ class _ExampleAppState extends State<ExampleApp> {
       home: Scaffold(
         appBar: AppBar(
           title: const Text('Flutter Security Checker'),
-          centerTitle: true
+          centerTitle: true,
         ),
-        body: _buildContentView()
+        body: _buildContentView(),
       ),
     );
   }
@@ -43,18 +43,24 @@ class _ExampleAppState extends State<ExampleApp> {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Expanded(child: _buildResultTable()),
-        _buildCheckButton()
+        _buildCheckButton(),
       ],
     );
   }
 
   Widget _buildResultTable() {
-    final cellsBuilder = (String method, bool result, [bool negative = false]) {
-      final resultStyle = (result != null) ? TextStyle(
-        color: result
-            ? negative ? Colors.red : Colors.blue
-            : negative ? Colors.blue : Colors.red
-      ) : TextStyle();
+    final cellsBuilder = (String method, bool? result, [bool reverse = false]) {
+      final resultStyle = (result != null)
+          ? TextStyle(
+              color: result
+                  ? reverse
+                      ? Colors.red
+                      : Colors.blue
+                  : reverse
+                      ? Colors.blue
+                      : Colors.red,
+            )
+          : TextStyle();
 
       return [
         DataCell(Text(method)),
@@ -70,25 +76,29 @@ class _ExampleAppState extends State<ExampleApp> {
       rows: [
         DataRow(cells: cellsBuilder('isRooted', _isRooted, true)),
         DataRow(cells: cellsBuilder('isRealDevice', _isRealDevice)),
-        DataRow(cells: cellsBuilder('hasCorrectlyInstalled', _hasCorrectlyInstalled))
+        DataRow(
+            cells:
+                cellsBuilder('hasCorrectlyInstalled', _hasCorrectlyInstalled)),
       ],
     );
   }
 
   Widget _buildCheckButton() {
-    final child = _isChecking ? ConstrainedBox(
-      constraints: BoxConstraints.tight(Size.square(15.0)),
-      child: const CircularProgressIndicator(
-        strokeWidth: 2.0,
-        valueColor: AlwaysStoppedAnimation<Color>(Colors.white)
-      )
-    ) : Text('CHECK');
+    final buttonChild = _isChecking
+        ? SizedBox.square(
+            dimension: 15.0,
+            child: const CircularProgressIndicator(
+              strokeWidth: 2.0,
+              valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+            ),
+          )
+        : Text('CHECK');
 
     return SizedBox(
       height: 58.0,
       child: ElevatedButton(
-        child: child,
-        onPressed: _onCheckButtonPressed
+        child: buttonChild,
+        onPressed: _onCheckButtonPressed,
       ),
     );
   }
