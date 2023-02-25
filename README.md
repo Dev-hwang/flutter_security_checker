@@ -14,7 +14,7 @@ To use this plugin, add `flutter_security_checker` as a [dependency in your pubs
 
 ```yaml
 dependencies:
-  flutter_security_checker: ^1.0.1
+  flutter_security_checker: ^2.0.0
 ```
 
 ## How to use
@@ -25,14 +25,14 @@ import 'package:flutter_security_checker/flutter_security_checker.dart';
 void _onCheckButtonPressed() async {
   // Check whether the device is rooted or jailBroken.
   // In Android Emulator or iOS Simulator it always returns true.
-  final isRooted = await FlutterSecurityChecker.isRooted;
+  final bool isRooted = await FlutterSecurityChecker.isRooted;
   
   // Check whether the device on which the app is installed is a physical device.
-  final isRealDevice = await FlutterSecurityChecker.isRealDevice;
+  final bool isRealDevice = await FlutterSecurityChecker.isRealDevice;
   
   // Check that the app is installed through the correct content service (such as Google Play or Apple Store).
   // It is not an app installed through content service or always returns false in debugging mode.
-  final hasCorrectlyInstalled = await FlutterSecurityChecker.hasCorrectlyInstalled;
+  final bool hasCorrectlyInstalled = await FlutterSecurityChecker.hasCorrectlyInstalled;
 }
 ```
 
