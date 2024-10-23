@@ -8,13 +8,20 @@ This plugin provides the ability to verify rooting and integrity on Android and 
 * Can check whether the device on which the app is installed is a physical device.
 * Can check that the app is installed through the correct content service (such as Google Play or Apple Store).
 
+## Support version
+
+- Flutter: `3.3.0+`
+- Dart: `2.18.0+`
+- Android: `5.0+ (minSdkVersion: 21)`
+- iOS: `12.0+`
+
 ## Getting started
 
 To use this plugin, add `flutter_security_checker` as a [dependency in your pubspec.yaml file](https://flutter.io/platform-plugins/). For example:
 
 ```yaml
 dependencies:
-  flutter_security_checker: ^3.0.0
+  flutter_security_checker: ^3.2.0
 ```
 
 ## How to use

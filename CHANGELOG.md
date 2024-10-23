@@ -1,3 +1,10 @@
+## 3.2.0
+
+* [**FEAT**] Allow this plugin to run in the background
+* [**FEAT**] Add rooting apps and files checklist
+* [**CHORE**] Bump iOS minimumVersion to 12.0
+* [**CHORE**] Update dependencies
+
 ## 3.0.0
 
 * [**CHORE**] Update dependency constraints to sdk: `>=2.18.0 <4.0.0` flutter: `>=3.3.0`
