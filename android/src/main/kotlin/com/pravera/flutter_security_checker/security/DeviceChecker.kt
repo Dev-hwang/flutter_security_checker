@@ -25,7 +25,6 @@ class DeviceChecker {
 					|| Build.PRODUCT.contains("simulator")
 					|| Build.DEVICE.startsWith("emulator")
 					// another Android SDK emulator check
-					|| SystemProperties.get("ro.kernel.qemu") == "1"
 					|| Build.PRODUCT.toLowerCase().contains("nox")
 					|| Build.BOARD.toLowerCase().contains("nox")
 					|| Build.HARDWARE.toLowerCase().contains("nox")
