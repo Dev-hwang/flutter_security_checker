@@ -25,10 +25,10 @@ class DeviceChecker {
 					|| Build.PRODUCT.contains("simulator")
 					|| Build.DEVICE.startsWith("emulator")
 					// another Android SDK emulator check
-					|| Build.PRODUCT.toLowerCase().contains("nox")
-					|| Build.BOARD.toLowerCase().contains("nox")
-					|| Build.HARDWARE.toLowerCase().contains("nox")
-					|| Build.MODEL.toLowerCase().contains("droid4x")
+					|| Build.PRODUCT.lowercase().contains("nox")
+					|| Build.BOARD.lowercase().contains("nox")
+					|| Build.HARDWARE.lowercase().contains("nox")
+					|| Build.MODEL.lowercase().contains("droid4x")
 					|| Build.HARDWARE == "vbox86"
 			return !isEmulator
 		}
