@@ -13,7 +13,8 @@ class DeviceChecker {
 					|| Build.HARDWARE.contains("ranchu")
 					|| Build.MODEL.contains("google_sdk")
 					|| Build.MODEL.contains("Emulator")
-					|| Build.MODEL.contains("Android SDK built for x86")
+					|| Build.MODEL.contains("Android SDK built for")
+					|| Build.MODEL.startsWith("sdk_")
 					|| Build.MANUFACTURER.contains("Genymotion")
 					|| Build.PRODUCT.contains("sdk_google")
 					|| Build.PRODUCT.contains("google_sdk")
@@ -22,6 +23,13 @@ class DeviceChecker {
 					|| Build.PRODUCT.contains("vbox86p")
 					|| Build.PRODUCT.contains("emulator")
 					|| Build.PRODUCT.contains("simulator")
+					|| Build.DEVICE.startsWith("emulator")
+					// another Android SDK emulator check
+					|| Build.PRODUCT.lowercase().contains("nox")
+					|| Build.BOARD.lowercase().contains("nox")
+					|| Build.HARDWARE.lowercase().contains("nox")
+					|| Build.MODEL.lowercase().contains("droid4x")
+					|| Build.HARDWARE == "vbox86"
 			return !isEmulator
 		}
 	}

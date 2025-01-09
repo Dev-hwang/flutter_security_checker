@@ -1,3 +1,7 @@
+## 3.2.1
+
+* [**Fix**] Fix Android isRealDevice for models with Android SDK other than x86
+
 ## 3.2.0
 
 * [**FEAT**] Allow this plugin to run in the background
