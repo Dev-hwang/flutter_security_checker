@@ -1,6 +1,6 @@
 ## 3.2.1
 
-* [**Fix**] Fix Android isRealDevice for models with Android SDK other than x86
+* [**FIX**] Fix Android isRealDevice for models with Android SDK other than x86 [#pr-4](https://github.com/Dev-hwang/flutter_security_checker/pull/4)
 
 ## 3.2.0
 
